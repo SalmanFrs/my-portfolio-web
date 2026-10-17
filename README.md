@@ -9,7 +9,7 @@
 A modern, responsive personal portfolio website showcasing data science pipelines, machine learning projects, and full-stack web applications. Built with React 19, TypeScript, and a tailored Tailwind CSS design system with an emphasis on craftsmanship, accessibility, and content-driven architecture.
 
 🔗 **Live Demo:** [https://salman-portfolio-web.vercel.app/](https://salman-portfolio-web.vercel.app/)  
-📁 **Repository:** [https://github.com/SalmanFrs/My-Portofolio-Web](https://github.com/SalmanFrs/My-Portofolio-Web)
+📁 **Repository:** [https://github.com/SalmanFrs/my-portfolio-Web](https://github.com/SalmanFrs/my-portfolio-Web)
 
 ---
 
