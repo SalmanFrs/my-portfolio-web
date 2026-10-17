@@ -238,7 +238,7 @@ export const portfolioData: PortfolioData = {
       pipelineFile: "src/data/portfolioData.ts",
       pipelineTag: "REACT / TYPESCRIPT",
       visualType: "terminal",
-      images: ["/images/my-portofolio-web.png"],
+      images: ["/images/my-portfolio-web.png"],
       description:
         "Designed and developed a responsive personal portfolio website using React, TypeScript, Vite, and Tailwind CSS. The website showcases technical projects, professional experience, education, certifications, and technical competencies through a structured interface with interactive project cards and image carousels.",
       techStack: [
