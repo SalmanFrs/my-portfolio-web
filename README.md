@@ -91,7 +91,7 @@ Ensure you have [Node.js](https://nodejs.org/) installed on your machine (versio
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/SalmanFrs/my-portfolio-web.git
-   cd My-Portofolio-Web
+   cd my-portfolio-Web
    ```
 
 2. **Install dependencies:**
