@@ -248,8 +248,8 @@ export const portfolioData: PortfolioData = {
         { name: "Tailwind CSS", colorVariant: "primary" },
         { name: "Vercel", colorVariant: "neutral" },
       ],
-      liveDemoUrl: "https://my-portofolio-web.vercel.app/",
-      githubUrl: "https://github.com/SalmanFrs/My-Portofolio-Web",
+      liveDemoUrl: "https://salman-portfolio-web.vercel.app/",
+      githubUrl: "https://github.com/SalmanFrs/my-portfolio-Web",
     },
   ],
 
