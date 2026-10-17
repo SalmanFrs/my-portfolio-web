@@ -8,8 +8,8 @@
 
 A modern, responsive personal portfolio website showcasing data science pipelines, machine learning projects, and full-stack web applications. Built with React 19, TypeScript, and a tailored Tailwind CSS design system with an emphasis on craftsmanship, accessibility, and content-driven architecture.
 
-🔗 **Live Demo:** [https://my-portofolio-web.vercel.app/](https://my-portofolio-web.vercel.app/)  
-📁 **Repository:** [https://github.com/SalmanFrs/My-Portofolio-Web](https://github.com/SalmanFrs/My-Portofolio-Web)
+🔗 **Live Demo:** [https://salman-portfolio-web.vercel.app/](https://salman-portfolio-web.vercel.app/)  
+📁 **Repository:** [https://github.com/SalmanFrs/my-portfolio-web](https://github.com/SalmanFrs/my-portfolio-Web)
 
 ---
 
@@ -49,7 +49,10 @@ my-portofolio-web/
 │   ├── images/                        # Project screenshots and visual assets
 │   ├── profile.jpg                    # Author profile photo
 │   ├── favicon.svg                    # Web favicon
-│   └── CV Salman Faris Alhaitami.pdf  # Curriculum Vitae (PDF)
+│   ├── CV Salman Faris Alhaitami.pdf  # Curriculum Vitae (PDF)
+│   └── logos/                         # Company and technology logos
+│       ├── tableau.svg                # Tableau logo
+│       └── vscode.svg                 # Virtual Studio Code logo
 ├── src/
 │   ├── components/
 │   │   ├── Navbar.tsx                 # Sticky navigation, scroll-spy, and mobile drawer
