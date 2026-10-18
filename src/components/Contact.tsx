@@ -46,20 +46,22 @@ export const Contact: React.FC = () => {
 
           <div className="flex flex-wrap items-center gap-4 pt-4">
             <a
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-primary text-on-primary font-body-md text-body-md font-semibold hover:bg-primary-fixed-dim hover:text-on-primary-fixed transition-colors shadow-md"
+              className="inline-flex min-w-0 max-w-full items-center gap-2 rounded-lg bg-primary px-4 py-3.5 font-body-md text-body-md font-semibold text-on-primary shadow-md transition-colors hover:bg-primary-fixed-dim hover:text-on-primary-fixed sm:px-6"
               href={`mailto:${profile.email}`}
             >
-              <span className="material-symbols-outlined text-sm">mail</span>
-              <span>{profile.email}</span>
+              <span className="material-symbols-outlined shrink-0 text-sm">
+                mail
+              </span>
+              <span className="min-w-0 break-all">{profile.email}</span>
             </a>
 
             <button
-              className="inline-flex items-center gap-2 px-5 py-3.5 rounded-lg bg-surface-container-high text-on-surface font-body-md text-body-md hover:bg-surface-bright transition-colors border border-outline-variant/40 cursor-pointer"
+              className="inline-flex max-w-full items-center gap-2 rounded-lg border border-outline-variant/40 bg-surface-container-high px-5 py-3.5 font-body-md text-body-md text-on-surface transition-colors hover:bg-surface-bright"
               onClick={handleCopyEmail}
               type="button"
             >
               <span
-                className={`material-symbols-outlined text-sm ${
+                className={`material-symbols-outlined shrink-0 text-sm ${
                   copied ? 'text-primary' : 'text-secondary'
                 }`}
               >
