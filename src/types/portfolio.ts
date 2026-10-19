@@ -82,7 +82,8 @@ export interface PortfolioData {
     email: string;
     githubUrl: string;
     linkedinUrl: string;
-    cvUrl: string;
+    cvUrlId: string;
+    cvUrlEn: string;
   };
   skills: SkillCategory[];
   projects: ProjectItem[];

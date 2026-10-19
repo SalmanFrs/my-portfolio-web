@@ -19,7 +19,8 @@ export const portfolioData: PortfolioData = {
     email: "salmanfarisalhaitami@gmail.com",
     githubUrl: "https://github.com/SalmanFrs",
     linkedinUrl: "https://www.linkedin.com/in/salman-faris-alhaitami",
-    cvUrl: "/CV Salman Faris Alhaitami.pdf",
+    cvUrlId: "/cv-salman-id.pdf",
+    cvUrlEn: "/cv-salman-en.pdf",
   },
 
   skills: [

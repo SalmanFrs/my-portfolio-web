@@ -1,17 +1,28 @@
+
 import React from "react";
 import { portfolioData } from "../data/portfolioData";
 import { GitHubIconLink, LinkedInIconLink } from "./SocialIcons";
 
 export const Hero: React.FC = () => {
   const { profile } = portfolioData;
-  const avatarSrc = profile.avatarUrl.replace(/^\/public\//, '/');
-  const cvHref = profile.cvUrl.replace(/^\/public\//, '/');
+  const avatarSrc = profile.avatarUrl.replace(/^\/public\//, "/");
 
-  const handleDownloadCV = (e: React.MouseEvent) => {
-    if (profile.cvUrl === '#' || !profile.cvUrl) {
+  const [isCVMenuOpen, setIsCVMenuOpen] = React.useState(false);
+
+  const cvUrlId = profile.cvUrlId?.replace(/^\/public\//, "/");
+  const cvUrlEn = profile.cvUrlEn?.replace(/^\/public\//, "/");
+
+  const handleDownloadCV = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    cvUrl?: string,
+  ) => {
+    if (!cvUrl || cvUrl === "#") {
       e.preventDefault();
-      alert('The CV file is currently unavailable. Please try again later.');
+      alert("The CV file is currently unavailable. Please try again later.");
+      return;
     }
+
+    setIsCVMenuOpen(false);
   };
 
   return (
@@ -56,17 +67,47 @@ export const Hero: React.FC = () => {
               </span>
             </a>
 
-            <a
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-surface-container-high text-on-surface font-body-md text-body-md hover:bg-surface-bright transition-all cursor-pointer"
-              href={cvHref}
-              onClick={handleDownloadCV}
-              download={profile.cvUrl !== "#" ? "CV-Resume.pdf" : undefined}
-            >
-              <span className="material-symbols-outlined text-sm text-primary">
-                download
-              </span>
-              <span>Download CV</span>
-            </a>
+            <div className="relative">
+              <button
+                type="button"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-surface-container-high text-on-surface font-body-md text-body-md hover:bg-surface-bright transition-all"
+                onClick={() => setIsCVMenuOpen((prev) => !prev)}
+                aria-expanded={isCVMenuOpen}
+                aria-haspopup="true"
+              >
+                <span className="material-symbols-outlined text-sm text-primary">
+                  download
+                </span>
+                <span>Download CV</span>
+                <span className="material-symbols-outlined text-sm">
+                  {isCVMenuOpen ? "expand_less" : "expand_more"}
+                </span>
+              </button>
+
+              {isCVMenuOpen && (
+                <div className="absolute left-0 top-full z-50 mt-2 min-w-52 overflow-hidden rounded-lg border border-outline-variant/40 bg-surface-container-high shadow-lg">
+                  <a
+                    href={cvUrlId || "#"}
+                    download="CV-Salman-Faris-Alhaitami-ID.pdf"
+                    onClick={(e) => handleDownloadCV(e, cvUrlId)}
+                    className="flex items-center gap-3 px-4 py-3 text-on-surface transition-colors hover:bg-surface-bright"
+                  >
+                    <span className="text-lg">🇮🇩</span>
+                    <span>Bahasa Indonesia</span>
+                  </a>
+
+                  <a
+                    href={cvUrlEn || "#"}
+                    download="CV-Salman-Faris-Alhaitami-EN.pdf"
+                    onClick={(e) => handleDownloadCV(e, cvUrlEn)}
+                    className="flex items-center gap-3 px-4 py-3 text-on-surface transition-colors hover:bg-surface-bright"
+                  >
+                    <span className="text-lg">🇬🇧</span>
+                    <span>English</span>
+                  </a>
+                </div>
+              )}
+            </div>
           </div>
 
           <div className="flex flex-wrap items-center gap-6 pt-4 text-on-surface-variant font-label-sm text-label-sm">

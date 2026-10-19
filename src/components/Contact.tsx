@@ -72,7 +72,7 @@ export const Contact: React.FC = () => {
           </div>
 
           <div className="flex flex-wrap items-center gap-6 pt-6 text-on-surface-variant font-label-sm text-label-sm">
-            <LinkedInIconLink href={profile.linkedinUrl} label="LinkedIn Profile" />
+            <LinkedInIconLink href={profile.linkedinUrl} label="LinkedIn" />
             <span className="text-surface-container-highest">/</span>
             <GitHubIconLink href={profile.githubUrl} />
           </div>
