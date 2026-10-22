@@ -50,13 +50,9 @@ const CertificateCard: React.FC<CertificateCardProps> = ({ cert }) => {
     ? 'hover:border-primary/40'
     : 'hover:border-secondary/40';
 
-  const hasLink = cert.credentialUrl || cert.certificateFile;
-  const linkUrl = cert.credentialUrl || cert.certificateFile;
-  const linkLabel = cert.credentialUrl
-    ? 'View Credential'
-    : cert.certificateFile
-    ? 'View Certificate'
-    : '';
+  const hasLink = Boolean(cert.credentialUrl);
+  const linkUrl = cert.credentialUrl;
+  const linkLabel = 'View Credential';
 
   const currentImage = images[currentIndex];
   const altText = isMultiple
