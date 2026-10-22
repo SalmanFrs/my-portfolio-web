@@ -2,7 +2,7 @@ import React from 'react';
 import { portfolioData } from '../data/portfolioData';
 
 export const Experience: React.FC = () => {
-  const { experiences, certifications } = portfolioData;
+  const { experiences } = portfolioData;
 
   return (
     <section className="py-20 scroll-mt-20" id="experience">
@@ -13,10 +13,10 @@ export const Experience: React.FC = () => {
           <span>Track Record &amp; Foundation</span>
         </div>
         <h2 className="font-headline-lg text-headline-lg tracking-tight text-on-surface">
-          Experience, Education &amp; Certifications
+          Education &amp; Experience
         </h2>
         <p className="font-body-md text-body-md text-on-surface-variant max-w-xl">
-          A record of professional experience, academic achievements, and industry-recognized certifications.
+          A record of professional experience and academic achievements.
         </p>
       </div>
 
@@ -77,41 +77,6 @@ export const Experience: React.FC = () => {
             </div>
           );
         })}
-
-        {/* Certifications Card as Last Node */}
-        <div className="relative group">
-          <div className="absolute -left-[27px] md:-left-[31px] top-1.5 w-4 h-4 rounded-full bg-surface-dim border-2 border-primary group-hover:bg-primary transition-colors flex items-center justify-center">
-            <div className="w-1.5 h-1.5 rounded-full bg-primary-fixed"></div>
-          </div>
-
-          <div className="rounded-xl bg-surface-container p-6 shadow-sm border border-outline-variant/20">
-            <h3 className="font-headline-sm text-headline-sm text-on-surface mb-3">
-              Certifications
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-              {certifications.map((cert) => (
-                <div
-                  key={cert.id}
-                  className="p-3.5 rounded-lg bg-surface-container-low flex flex-col justify-between border border-outline-variant/10 hover:border-outline-variant/30 transition-colors"
-                >
-                  <span
-                    className={`font-label-sm text-label-sm ${
-                      cert.accentColor === 'secondary' ? 'text-secondary' : 'text-primary'
-                    }`}
-                  >
-                    {cert.issuer}
-                  </span>
-                  <span className="font-body-sm text-body-sm text-on-surface font-semibold mt-1">
-                    {cert.name}
-                  </span>
-                  <span className="font-code-inline text-[11px] text-outline mt-2">
-                    {cert.issuedYear}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

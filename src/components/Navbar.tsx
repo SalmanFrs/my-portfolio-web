@@ -11,8 +11,8 @@ export const Navbar: React.FC = () => {
     { label: 'Skills', href: '#skills', id: 'skills' },
     { label: 'Projects', href: '#projects', id: 'projects' },
     { label: 'Experience', href: '#experience', id: 'experience' },
+    { label: 'Certificates', href: '#certificates', id: 'certificates' },
     { label: 'About', href: '#about', id: 'about' },
-    { label: 'Contact', href: '#contact', id: 'contact' },
   ];
 
   useEffect(() => {

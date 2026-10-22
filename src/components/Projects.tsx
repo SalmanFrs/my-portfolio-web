@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { portfolioData } from '../data/portfolioData';
 import type { ProjectItem } from '../types/portfolio';
+import { ImageModal } from './ImageModal';
 
 interface ProjectImageCarouselProps {
   project: ProjectItem;
@@ -9,6 +10,7 @@ interface ProjectImageCarouselProps {
 
 const ProjectImageCarousel: React.FC<ProjectImageCarouselProps> = ({ project, images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
@@ -61,132 +63,164 @@ const ProjectImageCarousel: React.FC<ProjectImageCarouselProps> = ({ project, im
 
   const isMultiple = images.length > 1;
 
+  const handleContainerKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      // Open modal on Enter/Space if focused on container
+      if (e.target === e.currentTarget) {
+        e.preventDefault();
+        setIsModalOpen(true);
+        return;
+      }
+    }
+    handleKeyDown(e);
+  };
+
   return (
-    <div
-      role={isMultiple ? 'region' : undefined}
-      aria-roledescription={isMultiple ? 'carousel' : undefined}
-      aria-label={isMultiple ? `${project.title} screenshot carousel` : undefined}
-      tabIndex={isMultiple ? 0 : undefined}
-      onKeyDown={isMultiple ? handleKeyDown : undefined}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      onFocus={() => setIsFocused(true)}
-      onBlur={() => setIsFocused(false)}
-      className="relative w-full aspect-video overflow-hidden bg-surface-container-low border-b border-surface-container-highest group/carousel focus:outline-none focus:ring-1 focus:ring-primary/60"
-    >
-      {/* Sliding Images Container */}
+    <>
       <div
-        className={`flex w-full h-full ${
-          prefersReducedMotion ? '' : 'transition-transform duration-500 ease-out'
-        }`}
-        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+        role="button"
+        aria-label={`Preview screenshots for ${project.title}`}
+        tabIndex={0}
+        onKeyDown={handleContainerKeyDown}
+        onClick={() => setIsModalOpen(true)}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        onFocus={() => setIsFocused(true)}
+        onBlur={() => setIsFocused(false)}
+        className="relative w-full aspect-video overflow-hidden bg-surface-container-low border-b border-surface-container-highest group/carousel cursor-pointer focus:outline-none focus:ring-1 focus:ring-primary/60"
       >
-        {images.map((imgSrc, idx) => (
-          <div
-            key={idx}
-            className="w-full h-full flex-shrink-0 relative flex items-center justify-center bg-[#0e1117] overflow-hidden"
-          >
-            {/* Ambient subtle blurred backdrop to seamlessly fill any non-16:9 aspect ratios */}
-            <img
-              src={imgSrc}
-              alt=""
-              className="absolute inset-0 w-full h-full object-cover blur-xl opacity-25 pointer-events-none scale-110"
-              aria-hidden="true"
-            />
-            {/* Main high-clarity screenshot - perfectly framed and never cropped */}
-            <img
-              src={imgSrc}
-              alt={`${project.title} - Screenshot ${idx + 1} of ${images.length}`}
-              className="w-full h-full object-contain object-center relative z-0 transition-transform duration-500 group-hover/carousel:scale-105"
-              loading={idx === 0 ? 'eager' : 'lazy'}
-            />
-          </div>
-        ))}
-      </div>
-
-      {/* Subtle Dark Gradient Overlay for readability */}
-      <div className="absolute inset-0 bg-gradient-to-t from-surface-dim/90 via-surface-dim/15 to-surface-dim/60 pointer-events-none"></div>
-
-      {/* Pipeline info removed */}
-
-      {/* Navigation Arrows (only displayed if multiple images exist) */}
-      {isMultiple && (
-        <>
-          <button
-            type="button"
-            aria-label="Previous screenshot"
-            onClick={(e) => {
-              e.stopPropagation();
-              prevSlide();
-            }}
-            className="absolute left-2.5 top-1/2 -translate-y-1/2 w-11 h-11 min-w-[44px] min-h-[44px] rounded-full bg-surface-dim/85 hover:bg-surface-container-high text-on-surface border border-outline-variant/40 flex items-center justify-center opacity-0 group-hover/carousel:opacity-100 group-focus-within/carousel:opacity-100 transition-opacity focus:opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary z-20 cursor-pointer shadow-md"
-          >
-            <span className="material-symbols-outlined text-lg leading-none">chevron_left</span>
-          </button>
-
-          <button
-            type="button"
-            aria-label="Next screenshot"
-            onClick={(e) => {
-              e.stopPropagation();
-              nextSlide();
-            }}
-            className="absolute right-2.5 top-1/2 -translate-y-1/2 w-11 h-11 min-w-[44px] min-h-[44px] rounded-full bg-surface-dim/85 hover:bg-surface-container-high text-on-surface border border-outline-variant/40 flex items-center justify-center opacity-0 group-hover/carousel:opacity-100 group-focus-within/carousel:opacity-100 transition-opacity focus:opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary z-20 cursor-pointer shadow-md"
-          >
-            <span className="material-symbols-outlined text-lg leading-none">chevron_right</span>
-          </button>
-        </>
-      )}
-
-      {/* Bottom Bar: Category, Indicators & Tag */}
-      <div className="absolute bottom-3 inset-x-3 flex items-center justify-between z-10">
-        <span className="px-2 py-0.5 rounded bg-surface-dim/85 backdrop-blur-md font-label-sm text-label-sm text-outline border border-outline-variant/30 pointer-events-none">
-          {project.category}
-        </span>
-
-        {/* Carousel Position Dots (only if multiple images) */}
-        {isMultiple && (
-          <div
-            className="flex items-center gap-1.5 bg-surface-dim/80 backdrop-blur-md px-2 py-1 rounded-full border border-outline-variant/30"
-            role="tablist"
-            aria-label="Screenshot navigation dots"
-          >
-            {images.map((_, dotIdx) => (
-              <button
-                key={dotIdx}
-                type="button"
-                role="tab"
-                aria-selected={currentIndex === dotIdx}
-                aria-label={`Slide ${dotIdx + 1} of ${images.length}`}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setCurrentIndex(dotIdx);
-                }}
-                className={`transition-all rounded-full cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1 focus-visible:ring-offset-surface-dim ${
-                  currentIndex === dotIdx
-                    ? 'w-4 h-1.5 bg-secondary'
-                    : 'w-1.5 h-1.5 bg-outline-variant hover:bg-outline'
-                }`}
+        {/* Sliding Images Container */}
+        <div
+          className={`flex w-full h-full ${
+            prefersReducedMotion ? '' : 'transition-transform duration-500 ease-out'
+          }`}
+          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+        >
+          {images.map((imgSrc, idx) => (
+            <div
+              key={idx}
+              className="w-full h-full flex-shrink-0 relative flex items-center justify-center bg-[#0e1117] overflow-hidden"
+            >
+              {/* Ambient subtle blurred backdrop to seamlessly fill any non-16:9 aspect ratios */}
+              <img
+                src={imgSrc}
+                alt=""
+                className="absolute inset-0 w-full h-full object-cover blur-xl opacity-25 pointer-events-none scale-110"
+                aria-hidden="true"
               />
-            ))}
-          </div>
+              {/* Main high-clarity screenshot - perfectly framed and never cropped */}
+              <img
+                src={imgSrc}
+                alt={`${project.title} - Screenshot ${idx + 1} of ${images.length}`}
+                className="w-full h-full object-contain object-center relative z-0 transition-transform duration-500 group-hover/carousel:scale-105"
+                loading={idx === 0 ? 'eager' : 'lazy'}
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* Subtle Dark Gradient Overlay for readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-surface-dim/90 via-surface-dim/15 to-surface-dim/60 pointer-events-none"></div>
+
+        {/* Hover Zoom Icon Badge */}
+        <div className="absolute inset-0 bg-surface-dim/15 opacity-0 group-hover/carousel:opacity-100 transition-opacity flex items-center justify-center pointer-events-none z-10">
+          <span className="w-10 h-10 rounded-full bg-surface-dim/80 backdrop-blur-md border border-outline-variant/30 flex items-center justify-center text-on-surface shadow-md">
+            <span className="material-symbols-outlined text-xl">zoom_in</span>
+          </span>
+        </div>
+
+        {/* Navigation Arrows (only displayed if multiple images exist) */}
+        {isMultiple && (
+          <>
+            <button
+              type="button"
+              aria-label="Previous screenshot"
+              onClick={(e) => {
+                e.stopPropagation();
+                prevSlide();
+              }}
+              className="absolute left-2.5 top-1/2 -translate-y-1/2 w-11 h-11 min-w-[44px] min-h-[44px] rounded-full bg-surface-dim/85 hover:bg-surface-container-high text-on-surface border border-outline-variant/40 flex items-center justify-center opacity-0 group-hover/carousel:opacity-100 group-focus-within/carousel:opacity-100 transition-opacity focus:opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary z-20 cursor-pointer shadow-md"
+            >
+              <span className="material-symbols-outlined text-lg leading-none">chevron_left</span>
+            </button>
+
+            <button
+              type="button"
+              aria-label="Next screenshot"
+              onClick={(e) => {
+                e.stopPropagation();
+                nextSlide();
+              }}
+              className="absolute right-2.5 top-1/2 -translate-y-1/2 w-11 h-11 min-w-[44px] min-h-[44px] rounded-full bg-surface-dim/85 hover:bg-surface-container-high text-on-surface border border-outline-variant/40 flex items-center justify-center opacity-0 group-hover/carousel:opacity-100 group-focus-within/carousel:opacity-100 transition-opacity focus:opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary z-20 cursor-pointer shadow-md"
+            >
+              <span className="material-symbols-outlined text-lg leading-none">chevron_right</span>
+            </button>
+          </>
         )}
 
-        {/* Project Tag / Private Badge */}
-        <span
-          className={`px-2 py-0.5 rounded backdrop-blur-md font-label-sm text-label-sm border pointer-events-none ${
-            project.isPrivate || project.tagLabel === 'Private Project'
-              ? 'bg-surface-container-high/90 text-primary border-primary/30 flex items-center gap-1'
-              : 'bg-surface-container-highest/90 text-secondary border-secondary/20'
-          }`}
-        >
-          {(project.isPrivate || project.tagLabel === 'Private Project') && (
-            <span className="material-symbols-outlined text-[13px] leading-none">lock</span>
+        {/* Bottom Bar: Category, Indicators & Tag */}
+        <div className="absolute bottom-3 inset-x-3 flex items-center justify-between z-10 pointer-events-none">
+          <span className="px-2 py-0.5 rounded bg-surface-dim/85 backdrop-blur-md font-label-sm text-label-sm text-outline border border-outline-variant/30 pointer-events-none">
+            {project.category}
+          </span>
+
+          {/* Carousel Position Dots (only if multiple images) */}
+          {isMultiple && (
+            <div
+              className="flex items-center gap-1.5 bg-surface-dim/80 backdrop-blur-md px-2 py-1 rounded-full border border-outline-variant/30 pointer-events-auto"
+              role="tablist"
+              aria-label="Screenshot navigation dots"
+            >
+              {images.map((_, dotIdx) => (
+                <button
+                  key={dotIdx}
+                  type="button"
+                  role="tab"
+                  aria-selected={currentIndex === dotIdx}
+                  aria-label={`Slide ${dotIdx + 1} of ${images.length}`}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setCurrentIndex(dotIdx);
+                  }}
+                  className={`transition-all rounded-full cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1 focus-visible:ring-offset-surface-dim ${
+                    currentIndex === dotIdx
+                      ? 'w-4 h-1.5 bg-secondary'
+                      : 'w-1.5 h-1.5 bg-outline-variant hover:bg-outline'
+                  }`}
+                />
+              ))}
+            </div>
           )}
-          {project.tagLabel}
-        </span>
+
+          {/* Project Tag / Private Badge */}
+          <span
+            className={`px-2 py-0.5 rounded backdrop-blur-md font-label-sm text-label-sm border pointer-events-none ${
+              project.isPrivate || project.tagLabel === 'Private Project'
+                ? 'bg-surface-container-high/90 text-primary border-primary/30 flex items-center gap-1'
+                : 'bg-surface-container-highest/90 text-secondary border-secondary/20'
+            }`}
+          >
+            {(project.isPrivate || project.tagLabel === 'Private Project') && (
+              <span className="material-symbols-outlined text-[13px] leading-none">lock</span>
+            )}
+            {project.tagLabel}
+          </span>
+        </div>
       </div>
-    </div>
+
+      {/* Synchronized Project Image Lightbox Modal */}
+      {images.length > 0 && (
+        <ImageModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          images={images}
+          currentIndex={currentIndex}
+          onIndexChange={(newIndex) => setCurrentIndex(newIndex)}
+          title={project.title}
+          altPrefix={project.title}
+        />
+      )}
+    </>
   );
 };
 

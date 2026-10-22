@@ -49,6 +49,10 @@ export interface CertificationItem {
   name: string;
   issuedYear: string;
   accentColor: 'primary' | 'secondary';
+  imageUrl?: string;
+  imagesUrl?: string[];
+  credentialUrl?: string;
+  credentialId?: string;
 }
 
 export interface StrengthItem {

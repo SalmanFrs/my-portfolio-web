@@ -276,8 +276,8 @@ export const portfolioData: PortfolioData = {
       role: "Sarjana Komputer (S.Kom.) / Bachelor of Computer Science",
       organization:
         "Universitas Komputer Indonesia • Teknik Informatika (Informatics Engineering)",
-      period: "2022 - 2026",
-      location: "Indonesia",
+      period: "September 2022 - October 2026",
+      location: "Bandung, West Java, Indonesia",
       accentColor: "neutral",
       bullets: [
         "Fresh Graduate focus on Data Science, Machine Learning, and Web Architecture. Relevant coursework: Data Structures & Algorithms, Machine Learning, Web Engineering, Database Systems, Distributed Systems, Software Engineering Principles.",
@@ -292,6 +292,9 @@ export const portfolioData: PortfolioData = {
       name: "CCNA: Introduction to Networks", 
       issuedYear: "Issued February 2024", 
       accentColor: "secondary",
+      imageUrl: "images/certifications/CCNA Introduction to Networks.png",
+      credentialUrl: "https://www.credly.com/badges/b9ef9980-853f-4c8b-9d8c-4b9ea15bff2f/public_url",
+      credentialId: "b9ef9980-853f-4c8b-9d8c-4b9ea15bff2f",      
     },
     {
       id: "cert-2",
@@ -299,6 +302,9 @@ export const portfolioData: PortfolioData = {
       name: "Code Generation and Optimization Using IBM Granite",
       issuedYear: "Issued September 2025",
       accentColor: "primary",
+      imageUrl: "images/certifications/Code Generation and Optimization Using IBM Granite.png",
+      credentialUrl: "https://www.credly.com/badges/0703e205-2714-4bc1-9790-2b7bb3c75670/public_url",
+      credentialId: "0703e205-2714-4bc1-9790-2b7bb3c75670",
     },
     {
       id: "cert-3",
@@ -306,6 +312,8 @@ export const portfolioData: PortfolioData = {
       name: "TOEFL: Language Center UNIKOM", 
       issuedYear: "Issued November 2025 - Expires November 2027", 
       accentColor: "secondary",
+      imageUrl: "images/certifications/TOEFL Language Center UNIKOM.png",
+      credentialId: "11.25.05003",
     },
     {
       id: "cert-4",
@@ -313,6 +321,11 @@ export const portfolioData: PortfolioData = {
       name: "Certified Associate Data Scientist (CADS)", 
       issuedYear: "Issued March 2026 - Expires March 2029", 
       accentColor: "primary",
+      imagesUrl: [
+        "images/certifications/BNSP - Certified Associate Data Scientist 1.png",
+        "images/certifications/BNSP - Certified Associate Data Scientist 2.png",
+      ],
+      credentialId: "TIK.317.00898 2026",
     },
     {
       id: "cert-5",
@@ -320,6 +333,9 @@ export const portfolioData: PortfolioData = {
       name: "Gemini Certified Student - University", 
       issuedYear: "Issued August 2026 - Expires August 2029", 
       accentColor: "secondary",
+      imageUrl: "images/certifications/Gemini Certified Student University.png",
+      credentialUrl: "https://edu.google.accredible.com/c11b3cd5-3fbc-4549-bd7f-04a687d8a5f6#acc.Om7hQC9a",
+      credentialId: "192517103",
     },
     {
       id: "cert-6",
@@ -327,6 +343,9 @@ export const portfolioData: PortfolioData = {
       name: "Fundamental Algoritma",
       issuedYear: "Issued October 2026",
       accentColor: "primary",
+      imageUrl: "images/certifications/Fundamental Algoritma Coding Studio.png",
+      credentialUrl: "https://member.codingstudio.id/certificate/O1KmWz8kca",
+      credentialId: "O1KmWz8kca",
     },
   ],
 
