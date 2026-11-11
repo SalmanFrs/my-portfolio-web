@@ -48,8 +48,10 @@ A modern, responsive personal portfolio website showcasing data science pipeline
 my-portfolio-web/
 ├── public/
 │   ├── profile.jpg                     
-│   ├── favicon.svg                    
-│   ├── CV Salman Faris Alhaitami.pdf   
+│   ├── favicon.svg
+│   ├── icons.svg                 
+│   ├── cv-salman-id.pdf
+│   ├── cv-salman-en.pdf  
 │   └── images/
 │       ├── brin-anomaly.png             
 │       ├── brin-dashboard.png            
