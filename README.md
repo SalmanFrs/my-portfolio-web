@@ -29,16 +29,16 @@ A modern, responsive personal portfolio website showcasing data science pipeline
 
 ## 🛠️ Technology Stack
 
-| Category | Technology | Description |
-|---|---|---|
-| **Frontend Framework** | [React 19](https://react.dev/) | Component-based user interface library |
-| **Language** | [TypeScript](https://www.typescriptlang.org/) | Typed JavaScript for improved code maintainability |
-| **Build Tool** | [Vite 8](https://vite.dev/) | Fast development server and production bundler |
-| **Styling** | [Tailwind CSS v3](https://tailwindcss.com/) | Utility-first CSS framework with customized design tokens |
-| **Typography** | [Geist](https://vercel.com/font) & [JetBrains Mono](https://www.jetbrains.com/lp/mono/) | Sans-serif and monospace typography |
-| **Icons** | [Material Symbols Outlined](https://fonts.google.com/icons) & [React Icons](https://react-icons.github.io/react-icons/) | Interface icons and brand icons |
-| **Linter & Code Quality** | [oxlint](https://oxc.rs/) | JavaScript and TypeScript linting |
-| **Deployment** | [Vercel](https://vercel.com/) | Website hosting and deployment |
+| Category                  | Technology                                                                                                              | Description                                               |
+| ------------------------- | ----------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------- |
+| **Frontend Framework**    | [React 19](https://react.dev/)                                                                                          | Component-based user interface library                    |
+| **Language**              | [TypeScript](https://www.typescriptlang.org/)                                                                           | Typed JavaScript for improved code maintainability        |
+| **Build Tool**            | [Vite 8](https://vite.dev/)                                                                                             | Fast development server and production bundler            |
+| **Styling**               | [Tailwind CSS v3](https://tailwindcss.com/)                                                                             | Utility-first CSS framework with customized design tokens |
+| **Typography**            | [Geist](https://vercel.com/font) & [JetBrains Mono](https://www.jetbrains.com/lp/mono/)                                 | Sans-serif and monospace typography                       |
+| **Icons**                 | [Material Symbols Outlined](https://fonts.google.com/icons) & [React Icons](https://react-icons.github.io/react-icons/) | Interface icons and brand icons                           |
+| **Linter & Code Quality** | [oxlint](https://oxc.rs/)                                                                                               | JavaScript and TypeScript linting                         |
+| **Deployment**            | [Vercel](https://vercel.com/)                                                                                           | Website hosting and deployment                            |
 
 ---
 
@@ -47,22 +47,20 @@ A modern, responsive personal portfolio website showcasing data science pipeline
 ```text
 my-portfolio-web/
 ├── public/
-│   ├── profile.jpg                     
+│   ├── profile.jpg
 │   ├── favicon.svg
-│   ├── icons.svg
-│   ├── cv-salman-en.pdf
-│   ├── cv-salman-id.pdf
+│   ├── CV Salman Faris Alhaitami.pdf
 │   └── images/
-│       ├── brin-anomaly.png             
-│       ├── brin-dashboard.png            
-│       ├── fate-series.png               
+│       ├── brin-anomaly.png
+│       ├── brin-dashboard.png
+│       ├── fate-series.png
 │       ├── hoyoverse.png
 │       ├── kariertrack-dashboard.png
 │       ├── mini-blog-ibm.png
 │       ├── my-portfolio-web.png
-│       ├── pothole-classification.png    
-│       └── pothole-interface.png         
-│       └── certifications/              
+│       ├── pothole-classification.png
+│       └── pothole-interface.png
+│       └── certifications/
 │           ├── BNSP - Certified Associate Data Scientist 1.png
 │           ├── BNSP - Certified Associate Data Scientist 2.png
 │           ├── CCNA Introduction to Networks.png
@@ -90,14 +88,14 @@ my-portfolio-web/
 │   │   ├── Skills.tsx
 │   │   └── SocialIcons.tsx
 │   ├── data/
-│   │   ├── portfolioData.ts              
-│   │   └── skillIcons.tsx                
+│   │   ├── portfolioData.ts
+│   │   └── skillIcons.tsx
 │   ├── types/
-│   │   └── portfolio.ts                  
+│   │   └── portfolio.ts
 │   ├── App.css
-│   ├── App.tsx                           
-│   ├── index.css                         
-│   └── main.tsx                          
+│   ├── App.tsx
+│   ├── index.css
+│   └── main.tsx
 ├── .gitignore
 ├── .oxlintrc.json
 ├── AGENTS.md
@@ -106,11 +104,11 @@ my-portfolio-web/
 ├── package.json
 ├── package-lock.json
 ├── postcss.config.js
-├── tailwind.config.js                    
+├── tailwind.config.js
 ├── tsconfig.app.json
-├── tsconfig.json                         
+├── tsconfig.json
 ├── tsconfig.node.json
-└── vite.config.ts                        
+└── vite.config.ts
 ```
 
 ---
@@ -124,29 +122,36 @@ Install [Node.js](https://nodejs.org/) and npm. Use a Node.js version compatible
 ### Installation & Setup
 
 1. **Clone the repository:**
+
    ```bash
    git clone https://github.com/SalmanFrs/my-portfolio-web.git
    cd my-portfolio-web
    ```
 
 2. **Install dependencies:**
+
    ```bash
    npm install
    ```
 
 3. **Start the local development server:**
+
    ```bash
    npm run dev
    ```
+
    Open the local URL shown in your terminal, typically `http://localhost:5173/`.
 
 4. **Build for production:**
+
    ```bash
    npm run build
    ```
+
    The production-ready files will be generated in the `dist/` directory.
 
 5. **Run lint checks:**
+
    ```bash
    npm run lint
    ```
@@ -211,7 +216,8 @@ This project is open-source and available under the [MIT License](LICENSE).
 
 ## 📬 Contact & Connect
 
-**Salman Faris Alhaitami**  
-- **Email:** [salmanfarisalhaitami@gmail.com](mailto:salmanfarisalhaitami@gmail.com)  
-- **LinkedIn:** [linkedin.com/in/salman-faris-alhaitami](https://www.linkedin.com/in/salman-faris-alhaitami)  
+**Salman Faris Alhaitami**
+
+- **Email:** [salmanfarisalhaitami@gmail.com](mailto:salmanfarisalhaitami@gmail.com)
+- **LinkedIn:** [linkedin.com/in/salman-faris-alhaitami](https://www.linkedin.com/in/salman-faris-alhaitami)
 - **GitHub:** [github.com/SalmanFrs](https://github.com/SalmanFrs)
