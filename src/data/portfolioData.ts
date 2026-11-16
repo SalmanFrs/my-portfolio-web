@@ -7,7 +7,7 @@ export const portfolioData: PortfolioData = {
     degree: "S.Kom.",
     headline:
       "Informatics Engineering Graduate | Data Science & Web Development",
-    titleTag: "Informatics Engineering • Fresh Graduate • 2026", 
+    titleTag: "Informatics Engineering • Fresh Graduate • 2026",
     university: "Universitas Komputer Indonesia",
     graduationYear: "2026",
     location: "Karawang, Indonesia",
@@ -101,11 +101,17 @@ export const portfolioData: PortfolioData = {
       colSpan: "md:col-span-2 lg:col-span-2",
       skills: [
         { name: "MySQL", highlight: true, colorVariant: "secondary" },
+        { name: "PostgreSQL", highlight: true, colorVariant: "secondary" },
+        { name: "Prisma ORM", colorVariant: "neutral" },
         { name: "Node.js", colorVariant: "neutral" },
         { name: "Git", colorVariant: "neutral" },
         { name: "GitHub", colorVariant: "neutral" },
         { name: "VS Code", colorVariant: "neutral" },
-        { name: "Hugging Face Spaces", highlight: true, colorVariant: "primary" },
+        {
+          name: "Hugging Face Spaces",
+          highlight: true,
+          colorVariant: "primary",
+        },
         { name: "Replicate API", colorVariant: "neutral" },
       ],
     },
@@ -166,10 +172,7 @@ export const portfolioData: PortfolioData = {
       pipelineFile: "signal_pipeline.py",
       pipelineTag: "FFT / ANOMALY",
       visualType: "wave",
-      images: [
-        "/images/brin-dashboard.png",
-        "/images/brin-anomaly.png",
-      ],
+      images: ["/images/brin-dashboard.png", "/images/brin-anomaly.png"],
       description:
         "Interactive signal anomaly detection and exploratory intelligence system developed during research collaboration with BRIN. Implements Fast Fourier Transform (FFT) for frequency domain feature extraction, Isolation Forest for unsupervised outlier detection, and K-Means for cluster segmentation.",
       techStack: [
@@ -201,10 +204,8 @@ export const portfolioData: PortfolioData = {
         { name: "Replicate API", colorVariant: "secondary" },
         { name: "Vercel", colorVariant: "neutral" },
       ],
-      liveDemoUrl:
-        "https://mini-blog-ibm.vercel.app/",
-      githubUrl:
-        "https://github.com/SalmanFrs/Mini-Blog-IBM",
+      liveDemoUrl: "https://mini-blog-ibm.vercel.app/",
+      githubUrl: "https://github.com/SalmanFrs/Mini-Blog-IBM",
     },
     {
       id: "pothole-severity-classification",
@@ -233,7 +234,8 @@ export const portfolioData: PortfolioData = {
     {
       id: "personal-portfolio",
       title: "Personal Portfolio Website",
-      subtitle: "A responsive portfolio for showcasing technical projects and experience",
+      subtitle:
+        "A responsive portfolio for showcasing technical projects and experience",
       category: "Web Application",
       tagLabel: "Personal Project",
       pipelineFile: "src/data/portfolioData.ts",
@@ -251,6 +253,29 @@ export const portfolioData: PortfolioData = {
       ],
       liveDemoUrl: "https://salman-portfolio-web.vercel.app/",
       githubUrl: "https://github.com/SalmanFrs/my-portfolio-Web",
+    },
+    {
+      id: "kariertrack",
+      title: "KarierTrack",
+      subtitle: "A full-stack career pipeline & resume A/B testing platform",
+      category: "Web Application",
+      tagLabel: "Personal Project",
+      pipelineFile: "src/app/(dashboard)/applications/page.tsx",
+      pipelineTag: "NEXT.JS / PRISMA / POSTGRESQL",
+      visualType: "terminal",
+      images: ["/images/kariertrack-dashboard.png"],
+      description:
+        "Developed and deployed a full-stack web application on Vercel using Next.js 16, TypeScript, Tailwind CSS v4, Prisma ORM, and PostgreSQL (Neon) for tracking multi-stage job application pipelines and evaluating resume version performance. Features an interactive drag-and-drop Kanban board, paginated table views with multi-parameter filtering, A/B testing response rate analytics, automated >14-day follow-up alerts, and a dual-mode session architecture with a self-resetting interactive recruiter demo sandbox.",
+      techStack: [
+        { name: "Next.js", colorVariant: "primary" },
+        { name: "TypeScript", colorVariant: "secondary" },
+        { name: "Tailwind CSS", colorVariant: "primary" },
+        { name: "Prisma", colorVariant: "secondary" },
+        { name: "PostgreSQL", colorVariant: "neutral" },
+        { name: "Vercel", colorVariant: "neutral" },
+      ],
+      liveDemoUrl: "https://kariertrack-web.vercel.app/",
+      githubUrl: "https://github.com/SalmanFrs/kariertrack",
     },
   ],
 
@@ -288,29 +313,32 @@ export const portfolioData: PortfolioData = {
   certifications: [
     {
       id: "cert-1",
-      issuer: "Cisco", 
-      name: "CCNA: Introduction to Networks", 
-      issuedYear: "Issued February 2024", 
+      issuer: "Cisco",
+      name: "CCNA: Introduction to Networks",
+      issuedYear: "Issued February 2024",
       accentColor: "secondary",
       imageUrl: "images/certifications/CCNA Introduction to Networks.png",
-      credentialUrl: "https://www.credly.com/badges/b9ef9980-853f-4c8b-9d8c-4b9ea15bff2f/public_url",
-      credentialId: "b9ef9980-853f-4c8b-9d8c-4b9ea15bff2f",      
+      credentialUrl:
+        "https://www.credly.com/badges/b9ef9980-853f-4c8b-9d8c-4b9ea15bff2f/public_url",
+      credentialId: "b9ef9980-853f-4c8b-9d8c-4b9ea15bff2f",
     },
     {
       id: "cert-2",
-      issuer: "IBM", 
+      issuer: "IBM",
       name: "Code Generation and Optimization Using IBM Granite",
       issuedYear: "Issued September 2025",
       accentColor: "primary",
-      imageUrl: "images/certifications/Code Generation and Optimization Using IBM Granite.png",
-      credentialUrl: "https://www.credly.com/badges/0703e205-2714-4bc1-9790-2b7bb3c75670/public_url",
+      imageUrl:
+        "images/certifications/Code Generation and Optimization Using IBM Granite.png",
+      credentialUrl:
+        "https://www.credly.com/badges/0703e205-2714-4bc1-9790-2b7bb3c75670/public_url",
       credentialId: "0703e205-2714-4bc1-9790-2b7bb3c75670",
     },
     {
       id: "cert-3",
       issuer: "Universitas Komputer Indonesia (UNIKOM)",
-      name: "TOEFL: Language Center UNIKOM", 
-      issuedYear: "Issued November 2025 - Expires November 2027", 
+      name: "TOEFL: Language Center UNIKOM",
+      issuedYear: "Issued November 2025 - Expires November 2027",
       accentColor: "secondary",
       imageUrl: "images/certifications/TOEFL Language Center UNIKOM.png",
       credentialId: "11.25.05003",
@@ -318,8 +346,8 @@ export const portfolioData: PortfolioData = {
     {
       id: "cert-4",
       issuer: "Badan Nasional Sertifikasi Profesi (BNSP)",
-      name: "Certified Associate Data Scientist (CADS)", 
-      issuedYear: "Issued March 2026 - Expires March 2029", 
+      name: "Certified Associate Data Scientist (CADS)",
+      issuedYear: "Issued March 2026 - Expires March 2029",
       accentColor: "primary",
       imagesUrl: [
         "images/certifications/BNSP - Certified Associate Data Scientist 1.png",
@@ -330,11 +358,12 @@ export const portfolioData: PortfolioData = {
     {
       id: "cert-5",
       issuer: "Google for Education",
-      name: "Gemini Certified Student - University", 
-      issuedYear: "Issued August 2026 - Expires August 2029", 
+      name: "Gemini Certified Student - University",
+      issuedYear: "Issued August 2026 - Expires August 2029",
       accentColor: "secondary",
       imageUrl: "images/certifications/Gemini Certified Student University.png",
-      credentialUrl: "https://edu.google.accredible.com/c11b3cd5-3fbc-4549-bd7f-04a687d8a5f6#acc.Om7hQC9a",
+      credentialUrl:
+        "https://edu.google.accredible.com/c11b3cd5-3fbc-4549-bd7f-04a687d8a5f6#acc.Om7hQC9a",
       credentialId: "192517103",
     },
     {

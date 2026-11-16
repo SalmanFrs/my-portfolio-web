@@ -25,6 +25,9 @@ import {
   SiHuggingface,
   SiReplicate,
   SiUltralytics,
+  SiPrisma,
+  SiPostgresql,
+  SiW3Schools,
 } from "react-icons/si";
 import { FaJava } from "react-icons/fa6";
 import {
@@ -38,9 +41,10 @@ import {
   TbPhoto,
   TbWaveSine,
   TbGridDots,
-  TbCode,
   TbReplace,
 } from "react-icons/tb";
+import { DiVisualstudio } from "react-icons/di";
+import { IoLogoTableau } from "react-icons/io5";
 
 /**
  * Maps each technology name to its React icon component.
@@ -64,13 +68,7 @@ export const skillIconMap: Record<string, React.ReactElement> = {
   Seaborn: <TbChartLine />,
   "Jupyter Notebook": <SiJupyter />,
   "Google Colab": <SiGooglecolab />,
-  Tableau: (
-    <img
-      src="/images/logos/tableau.svg"
-      alt=""
-      className="skill-brand-icon"
-    />
-  ),
+  Tableau: <IoLogoTableau />,
   Sastrawi: <TbTextRecognition />,
   "TF-IDF": <TbMathFunction />,
   "Multinomial Naive Bayes": <TbBrain />,
@@ -78,7 +76,7 @@ export const skillIconMap: Record<string, React.ReactElement> = {
   // Web Development
   HTML: <SiHtml5 />,
   CSS: <SiCss />,
-  "W3.CSS": <TbCode />,
+  "W3.CSS": <SiW3Schools />,
   React: <SiReact />,
   Vite: <SiVite />,
   "Next.js": <SiNextdotjs />,
@@ -96,16 +94,12 @@ export const skillIconMap: Record<string, React.ReactElement> = {
 
   // Databases & Development Tools
   MySQL: <SiMysql />,
+  PostgreSQL: <SiPostgresql />,
+  "Prisma ORM": <SiPrisma />,
   "Node.js": <SiNodedotjs />,
   Git: <SiGit />,
   GitHub: <SiGithub />,
-  "VS Code": (
-    <img
-      src="/images/logos/vscode.svg"
-      alt=""
-      className="skill-brand-icon"
-    />
-  ),
+  "VS Code": <DiVisualstudio />,
   "Hugging Face Spaces": <SiHuggingface />,
   "Replicate API": <SiReplicate />,
 };

@@ -48,19 +48,20 @@ A modern, responsive personal portfolio website showcasing data science pipeline
 my-portfolio-web/
 ├── public/
 │   ├── profile.jpg                     
-│   ├── favicon.svg                    
-│   ├── CV Salman Faris Alhaitami.pdf   
+│   ├── favicon.svg
+│   ├── icons.svg
+│   ├── cv-salman-en.pdf
+│   ├── cv-salman-id.pdf
 │   └── images/
 │       ├── brin-anomaly.png             
 │       ├── brin-dashboard.png            
 │       ├── fate-series.png               
-│       ├── hoyoverse.png                    
-│       ├── mini-blog-ibm.png              
+│       ├── hoyoverse.png
+│       ├── kariertrack-dashboard.png
+│       ├── mini-blog-ibm.png
+│       ├── my-portfolio-web.png
 │       ├── pothole-classification.png    
-│       ├── pothole-interface.png         
-│       ├── logos/                        
-│       │   ├── tableau.svg
-│       │   └── vscode.svg
+│       └── pothole-interface.png         
 │       └── certifications/              
 │           ├── BNSP - Certified Associate Data Scientist 1.png
 │           ├── BNSP - Certified Associate Data Scientist 2.png
@@ -69,30 +70,47 @@ my-portfolio-web/
 │           ├── Fundamental Algoritma Coding Studio.png
 │           ├── Gemini Certified Student University.png
 │           └── TOEFL Language Center UNIKOM.png
+├── scripts/
+│   └── resize-images.py
 ├── src/
+│   ├── assets/
+│   │   ├── hero.png
+│   │   ├── react.svg
+│   │   └── vite.svg
 │   ├── components/
-│   │   ├── Navbar.tsx                       
-│   │   ├── Hero.tsx                      
-│   │   ├── About.tsx                     
-│   │   ├── Skills.tsx                 
-│   │   ├── Projects.tsx                  
-│   │   ├── Experience.tsx                
-│   │   ├── Certificates.tsx              
-│   │   ├── Contact.tsx                   
-│   │   ├── Footer.tsx                    
-│   │   └── SocialIcons.tsx               
+│   │   ├── About.tsx
+│   │   ├── Certificates.tsx
+│   │   ├── Contact.tsx
+│   │   ├── Experience.tsx
+│   │   ├── Footer.tsx
+│   │   ├── Hero.tsx
+│   │   ├── ImageModal.tsx
+│   │   ├── Navbar.tsx
+│   │   ├── Projects.tsx
+│   │   ├── Skills.tsx
+│   │   └── SocialIcons.tsx
 │   ├── data/
 │   │   ├── portfolioData.ts              
 │   │   └── skillIcons.tsx                
 │   ├── types/
 │   │   └── portfolio.ts                  
+│   ├── App.css
 │   ├── App.tsx                           
 │   ├── index.css                         
 │   └── main.tsx                          
+├── .gitignore
+├── .oxlintrc.json
+├── AGENTS.md
+├── check-icons.cjs
+├── index.html
+├── package.json
+├── package-lock.json
+├── postcss.config.js
 ├── tailwind.config.js                    
-├── vite.config.ts                        
+├── tsconfig.app.json
 ├── tsconfig.json                         
-└── package.json                          
+├── tsconfig.node.json
+└── vite.config.ts                        
 ```
 
 ---
@@ -131,6 +149,11 @@ Install [Node.js](https://nodejs.org/) and npm. Use a Node.js version compatible
 5. **Run lint checks:**
    ```bash
    npm run lint
+   ```
+
+6. **Optimize project images (optional helper script):**
+   ```bash
+   npm run resize-images
    ```
 
 ---
