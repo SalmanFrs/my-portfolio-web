@@ -101,6 +101,7 @@ my-portfolio-web/
 ├── AGENTS.md
 ├── check-icons.cjs
 ├── index.html
+├── LICENSE
 ├── package.json
 ├── package-lock.json
 ├── postcss.config.js
