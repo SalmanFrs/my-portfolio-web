@@ -11,6 +11,8 @@ A modern, responsive personal portfolio website showcasing data science pipeline
 🔗 **Live Demo:** [https://salman-portfolio-web.vercel.app/](https://salman-portfolio-web.vercel.app/)  
 📁 **Repository:** [https://github.com/SalmanFrs/my-portfolio-web](https://github.com/SalmanFrs/my-portfolio-web)
 
+![Portfolio Preview](public/images/my-portfolio-web.png)
+
 ---
 
 ## 🌟 Key Features
@@ -47,34 +49,23 @@ A modern, responsive personal portfolio website showcasing data science pipeline
 ```text
 my-portfolio-web/
 ├── public/
-│   ├── profile.jpg
+│   ├── cv-salman-en.pdf
+│   ├── cv-salman-id.pdf
 │   ├── favicon.svg
-│   ├── CV Salman Faris Alhaitami.pdf
+│   ├── icons.svg
+│   ├── profile.jpg
 │   └── images/
+│       ├── certifications/
+│       │   ├── BNSP - Certified Associate Data Scientist 1.png
+│       │   ├── CCNA Introduction to Networks.png
+│       │   └── ... (certificate previews)
 │       ├── brin-anomaly.png
-│       ├── brin-dashboard.png
-│       ├── fate-series.png
-│       ├── hoyoverse.png
 │       ├── kariertrack-dashboard.png
-│       ├── mini-blog-ibm.png
 │       ├── my-portfolio-web.png
-│       ├── pothole-classification.png
-│       └── pothole-interface.png
-│       └── certifications/
-│           ├── BNSP - Certified Associate Data Scientist 1.png
-│           ├── BNSP - Certified Associate Data Scientist 2.png
-│           ├── CCNA Introduction to Networks.png
-│           ├── Code Generation and Optimization Using IBM Granite.png
-│           ├── Fundamental Algoritma Coding Studio.png
-│           ├── Gemini Certified Student University.png
-│           └── TOEFL Language Center UNIKOM.png
+│       └── ... (project screenshots)
 ├── scripts/
 │   └── resize-images.py
 ├── src/
-│   ├── assets/
-│   │   ├── hero.png
-│   │   ├── react.svg
-│   │   └── vite.svg
 │   ├── components/
 │   │   ├── About.tsx
 │   │   ├── Certificates.tsx
@@ -98,8 +89,6 @@ my-portfolio-web/
 │   └── main.tsx
 ├── .gitignore
 ├── .oxlintrc.json
-├── AGENTS.md
-├── check-icons.cjs
 ├── index.html
 ├── LICENSE
 ├── package.json
@@ -151,16 +140,25 @@ Install [Node.js](https://nodejs.org/) and npm. Use a Node.js version compatible
 
    The production-ready files will be generated in the `dist/` directory.
 
-5. **Run lint checks:**
+5. **Preview production build locally:**
+
+   ```bash
+   npm run preview
+   ```
+
+6. **Run lint checks:**
 
    ```bash
    npm run lint
    ```
 
-6. **Optimize project images (optional helper script):**
+7. **Optimize project screenshots (optional helper script):**
+
    ```bash
    npm run resize-images
    ```
+
+   > *(Requires Python 3 & Pillow: `pip install Pillow`)*
 
 ---
 
@@ -179,6 +177,9 @@ Add or update an entry in the `projects` array in `src/data/portfolioData.ts`. T
   subtitle: "Brief one-line summary",
   category: "Web Application",
   tagLabel: "Personal Project",
+  pipelineFile: "app_pipeline.py",
+  pipelineTag: "FULLSTACK / ML",
+  visualType: "terminal", // 'wave' | 'terminal' | 'bbox'
   images: [
     "/images/screenshot-1.png",
     "/images/screenshot-2.png"
@@ -190,16 +191,25 @@ Add or update an entry in the `projects` array in `src/data/portfolioData.ts`. T
     { name: "FastAPI", colorVariant: "neutral" }
   ],
   liveDemoUrl: "https://your-demo-url.com",
-  githubUrl: "https://github.com/your-username/repository"
+  githubUrl: "https://github.com/your-username/repository",
+  isPrivate: false
 }
 ```
 
 - **Multi-Screenshot Carousel:** When `images` contains more than one file, the project carousel can display multiple screenshots.
-- **Private Repositories:** For projects whose source code cannot be shared, omit public repository URLs and use the project's supported private-project fields if available.
+- **Private Repositories:** For projects whose source code cannot be shared, set `isPrivate: true` and omit `githubUrl`.
 
 ### 2. Updating Profile & Resume
 
-Place CV PDF files in the `public/` directory and update the corresponding CV path field or fields in `src/data/portfolioData.ts`. Make sure the file paths match the actual filenames and the implementation in `Hero.tsx`.
+The portfolio supports dual-language CV downloads (Indonesian & English). Place your CV PDF files in the `public/` directory (e.g., `cv-salman-id.pdf` and `cv-salman-en.pdf`) and update the respective fields in `src/data/portfolioData.ts`:
+
+```typescript
+profile: {
+  // ...
+  cvUrlId: "/cv-salman-id.pdf", // Indonesian version
+  cvUrlEn: "/cv-salman-en.pdf", // English version
+}
+```
 
 ### 3. Adding or Updating Certificates
 
