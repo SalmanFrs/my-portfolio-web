@@ -301,7 +301,7 @@ export const portfolioData: PortfolioData = {
       role: "Sarjana Komputer (S.Kom.) / Bachelor of Computer Science",
       organization:
         "Universitas Komputer Indonesia • Teknik Informatika (Informatics Engineering)",
-      period: "October 2022 - October 2026",
+      period: "October 2022 - Agustus 2026",
       location: "Bandung, West Java, Indonesia",
       accentColor: "neutral",
       bullets: [
