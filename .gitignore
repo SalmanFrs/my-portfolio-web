@@ -12,6 +12,7 @@ dist
 dist-ssr
 backups
 *.local
+public/images/.originals/
 
 # Local AI Agent configuration
 AGENTS.md
