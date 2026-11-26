@@ -73,7 +73,6 @@ export const portfolioData: PortfolioData = {
         { name: "Vite", colorVariant: "neutral" },
         { name: "Next.js", highlight: true, colorVariant: "secondary" },
         { name: "Tailwind CSS", colorVariant: "neutral" },
-        { name: "FastAPI", highlight: true, colorVariant: "primary" },
       ],
     },
     {
@@ -85,6 +84,7 @@ export const portfolioData: PortfolioData = {
       skills: [
         { name: "PyTorch", highlight: true, colorVariant: "primary" },
         { name: "YOLOv11", highlight: true, colorVariant: "secondary" },
+        { name: "ONNX Runtime", colorVariant: "secondary" },
         { name: "OpenCV", colorVariant: "neutral" },
         { name: "scikit-image", colorVariant: "neutral" },
         { name: "FFT", colorVariant: "neutral" },
@@ -103,7 +103,6 @@ export const portfolioData: PortfolioData = {
         { name: "MySQL", highlight: true, colorVariant: "secondary" },
         { name: "PostgreSQL", highlight: true, colorVariant: "secondary" },
         { name: "Prisma ORM", colorVariant: "neutral" },
-        { name: "Node.js", colorVariant: "neutral" },
         { name: "Git", colorVariant: "neutral" },
         { name: "GitHub", colorVariant: "neutral" },
         { name: "VS Code", colorVariant: "neutral" },
@@ -112,6 +111,7 @@ export const portfolioData: PortfolioData = {
           highlight: true,
           colorVariant: "primary",
         },
+        { name: "Vercel", colorVariant: "neutral" },
         { name: "Replicate API", colorVariant: "neutral" },
       ],
     },
