@@ -228,7 +228,7 @@ export const Projects: React.FC = () => {
   const { projects } = portfolioData;
 
   const renderVisualPreview = (project: ProjectItem) => {
-    switch (project.visualType) {
+    switch (project.visualType ?? 'terminal') {
       case 'wave':
         return (
           <div className="absolute inset-x-0 bottom-4 px-4 flex items-center opacity-80 group-hover:opacity-100 transition-opacity">
@@ -335,9 +335,9 @@ export const Projects: React.FC = () => {
                   <div className="flex items-center justify-between text-outline font-label-sm text-label-sm z-10">
                     <span className="flex items-center gap-1.5 text-secondary">
                       <span className="w-2 h-2 rounded-full bg-secondary"></span>
-                      {project.pipelineFile}
+                      {project.pipelineFile ?? 'main.ts'}
                     </span>
-                    <span className="font-code-inline text-code-inline">{project.pipelineTag}</span>
+                    <span className="font-code-inline text-code-inline">{project.pipelineTag ?? project.category}</span>
                   </div>
 
                   {renderVisualPreview(project)}

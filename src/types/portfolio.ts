@@ -21,9 +21,9 @@ export interface ProjectItem {
   subtitle: string;
   category: string;
   tagLabel: string;
-  pipelineFile: string;
-  pipelineTag: string;
-  visualType: 'wave' | 'terminal' | 'bbox';
+  pipelineFile?: string;
+  pipelineTag?: string;
+  visualType?: 'wave' | 'terminal' | 'bbox';
   description: string;
   techStack: TechTag[];
   liveDemoUrl?: string;

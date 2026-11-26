@@ -177,9 +177,6 @@ Add or update an entry in the `projects` array in `src/data/portfolioData.ts`. T
   subtitle: "Brief one-line summary",
   category: "Web Application",
   tagLabel: "Personal Project",
-  pipelineFile: "app_pipeline.py",
-  pipelineTag: "FULLSTACK / ML",
-  visualType: "terminal", // 'wave' | 'terminal' | 'bbox'
   images: [
     "/images/screenshot-1.png",
     "/images/screenshot-2.png"
@@ -192,7 +189,11 @@ Add or update an entry in the `projects` array in `src/data/portfolioData.ts`. T
   ],
   liveDemoUrl: "https://your-demo-url.com",
   githubUrl: "https://github.com/your-username/repository",
-  isPrivate: false
+  isPrivate: false,
+  // Optional fallback canvas fields (only used when no screenshots are provided):
+  // pipelineFile: "app_pipeline.py",
+  // pipelineTag: "FULLSTACK / ML",
+  // visualType: "terminal" // 'wave' | 'terminal' | 'bbox'
 }
 ```
 

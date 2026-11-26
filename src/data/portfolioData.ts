@@ -124,9 +124,6 @@ export const portfolioData: PortfolioData = {
       subtitle: "Informational website about the Fate series",
       category: "Static Website",
       tagLabel: "Personal Project",
-      pipelineFile: "index.html",
-      pipelineTag: "HTML / CSS",
-      visualType: "terminal",
       image: "/images/fate-series.png",
       images: ["/images/fate-series.png"],
       description:
@@ -145,9 +142,6 @@ export const portfolioData: PortfolioData = {
       subtitle: "An informational website about HoYoverse games",
       category: "Static Website",
       tagLabel: "Application Project",
-      pipelineFile: "index.html",
-      pipelineTag: "HTML / CSS / JS",
-      visualType: "terminal",
       image: "/images/hoyoverse.png",
       images: ["/images/hoyoverse.png"],
       description:
@@ -169,9 +163,6 @@ export const portfolioData: PortfolioData = {
       category: "Streamlit App",
       tagLabel: "Private Project",
       isPrivate: true,
-      pipelineFile: "signal_pipeline.py",
-      pipelineTag: "FFT / ANOMALY",
-      visualType: "wave",
       images: ["/images/brin-dashboard.png", "/images/brin-anomaly.png"],
       description:
         "Interactive signal anomaly detection and exploratory intelligence system developed during research collaboration with BRIN. Implements Fast Fourier Transform (FFT) for frequency domain feature extraction, Isolation Forest for unsupervised outlier detection, and K-Means for cluster segmentation.",
@@ -190,9 +181,6 @@ export const portfolioData: PortfolioData = {
       subtitle: "Automated blog generator with IBM Granite LLM",
       category: "LLM Web Application",
       tagLabel: "Capstone Project",
-      pipelineFile: "app/page.tsx",
-      pipelineTag: "Next.js / TypeScript / LLM",
-      visualType: "terminal",
       image: "/images/mini-blog-ibm.png",
       description:
         "Developed a web application that generates concise blog posts from user-provided topics using the IBM Granite foundation model via Replicate API. Features include Markdown-formatted results, a browsing history stored in LocalStorage, and responsive interfaces for desktop and mobile devices.",
@@ -214,9 +202,6 @@ export const portfolioData: PortfolioData = {
       category: "Computer Vision",
       tagLabel: "Thesis Project",
       isPrivate: true,
-      pipelineFile: "app.py",
-      pipelineTag: "YOLOv11 / DETECTION",
-      visualType: "terminal",
       images: [
         "/images/pothole-interface.png",
         "/images/pothole-classification.png",
@@ -238,9 +223,6 @@ export const portfolioData: PortfolioData = {
         "A responsive portfolio for showcasing technical projects and experience",
       category: "Web Application",
       tagLabel: "Personal Project",
-      pipelineFile: "src/data/portfolioData.ts",
-      pipelineTag: "REACT / TYPESCRIPT",
-      visualType: "terminal",
       images: ["/images/my-portfolio-web.png"],
       description:
         "Designed and developed a responsive personal portfolio website using React, TypeScript, Vite, and Tailwind CSS. The website showcases technical projects, professional experience, education, certifications, and technical competencies through a structured interface with interactive project cards and image carousels.",
@@ -260,9 +242,6 @@ export const portfolioData: PortfolioData = {
       subtitle: "A full-stack career pipeline & resume A/B testing platform",
       category: "Web Application",
       tagLabel: "Personal Project",
-      pipelineFile: "src/app/(dashboard)/applications/page.tsx",
-      pipelineTag: "NEXT.JS / PRISMA / POSTGRESQL",
-      visualType: "terminal",
       images: ["/images/kariertrack-dashboard.png"],
       description:
         "Developed and deployed a full-stack web application on Vercel using Next.js 16, TypeScript, Tailwind CSS v4, Prisma ORM, and PostgreSQL (Neon) for tracking multi-stage job application pipelines and evaluating resume version performance. Features an interactive drag-and-drop Kanban board, paginated table views with multi-parameter filtering, A/B testing response rate analytics, automated >14-day follow-up alerts, and a dual-mode session architecture with a self-resetting interactive recruiter demo sandbox.",
@@ -276,6 +255,27 @@ export const portfolioData: PortfolioData = {
       ],
       liveDemoUrl: "https://kariertrack-web.vercel.app/",
       githubUrl: "https://github.com/SalmanFrs/kariertrack",
+    },
+    {
+      id: "image-toolkit",
+      title: "Image Toolkit",
+      subtitle:
+        "A privacy-first, zero-backend AI image editing & optimization suite",
+      category: "Web Application",
+      tagLabel: "Personal Project",
+      images: ["/images/image-toolkit.png"],
+      description:
+        "Developed and deployed a privacy-first, zero-backend AI image editing web application on Vercel using Next.js 16, TypeScript, Tailwind CSS, and ONNX Runtime Web (WASM) to run deep learning models 100% locally in the browser without server uploads. Features LaMa Inpainting for interactive brush-based object removal, Real-ESRGAN (2x/4x) super-resolution upscaling with 256x256 weighted tiled inference to prevent grid seams, persistent browser Cache API model storage, interactive Before/After comparison sliders, live MM:SS processing timers, and essential tools for compression, resizing, cropping, and format conversion.",
+      techStack: [
+        { name: "Next.js", colorVariant: "primary" },
+        { name: "TypeScript", colorVariant: "secondary" },
+        { name: "Tailwind CSS", colorVariant: "primary" },
+        { name: "ONNX Runtime Web", colorVariant: "secondary" },
+        { name: "WebAssembly", colorVariant: "neutral" },
+        { name: "Vercel", colorVariant: "neutral" },
+      ],
+      liveDemoUrl: "https://image-toolkit-studio.vercel.app/",
+      githubUrl: "https://github.com/SalmanFrs/image-toolkit",
     },
   ],
 
