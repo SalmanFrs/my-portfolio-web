@@ -185,7 +185,7 @@ Add or update an entry in the `projects` array in `src/data/portfolioData.ts`. T
   techStack: [
     { name: "React", colorVariant: "primary" },
     { name: "TypeScript", colorVariant: "secondary" },
-    { name: "FastAPI", colorVariant: "neutral" }
+    { name: "Tailwind CSS", colorVariant: "neutral" }
   ],
   liveDemoUrl: "https://your-demo-url.com",
   githubUrl: "https://github.com/your-username/repository",
