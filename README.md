@@ -18,6 +18,7 @@ A modern, responsive personal portfolio website showcasing data science pipeline
 ## 🌟 Key Features
 
 - **Data-Driven Architecture:** Profile information, project details, work experience, certifications, and technical skills are centralized in `src/data/portfolioData.ts`, making content easier to update and maintain.
+- **Category Filtering & Dynamic Context:** Compact pill-style category filter (`All`, `Data & ML`, `Web Development`) in the Projects section with dynamic section descriptions and accessible `aria-pressed` states.
 - **Interactive Project Carousel:** Responsive 16:9 project image carousels with smooth transitions, 5-second auto-slide, pause-on-hover/focus, keyboard arrow navigation (`Left`/`Right`), and support for `prefers-reduced-motion`.
 - **Accessible & Human-Centric UI:**
   - Keyboard focus indicators using `focus-visible` for interactive buttons and links.
@@ -59,7 +60,9 @@ my-portfolio-web/
 │       │   ├── BNSP - Certified Associate Data Scientist 1.png
 │       │   ├── CCNA Introduction to Networks.png
 │       │   └── ... (certificate previews)
+│       ├── australia-bushfire-dashboard.png
 │       ├── brin-anomaly.png
+│       ├── image-toolkit.png
 │       ├── kariertrack-dashboard.png
 │       ├── my-portfolio-web.png
 │       └── ... (project screenshots)
@@ -176,6 +179,7 @@ Add or update an entry in the `projects` array in `src/data/portfolioData.ts`. T
   title: "Project Name",
   subtitle: "Brief one-line summary",
   category: "Web Application",
+  filterCategories: ["Web Development"],
   tagLabel: "Personal Project",
   images: [
     "/images/screenshot-1.png",

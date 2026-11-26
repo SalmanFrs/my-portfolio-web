@@ -1,5 +1,7 @@
 export type AccentColor = 'primary' | 'secondary' | 'neutral';
 
+export type ProjectFilterCategory = 'Data & ML' | 'Web Development';
+
 export interface TechTag {
   name: string;
   highlight?: boolean;
@@ -20,6 +22,7 @@ export interface ProjectItem {
   title: string;
   subtitle: string;
   category: string;
+  filterCategories: ProjectFilterCategory[];
   tagLabel: string;
   pipelineFile?: string;
   pipelineTag?: string;

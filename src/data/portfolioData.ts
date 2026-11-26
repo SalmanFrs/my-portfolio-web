@@ -1,4 +1,21 @@
-import type { PortfolioData } from "../types/portfolio";
+import type { PortfolioData, ProjectFilterCategory } from "../types/portfolio";
+
+export const projectFilterCategories: ("All" | ProjectFilterCategory)[] = [
+  "All",
+  "Data & ML",
+  "Web Development",
+];
+
+export const projectFilterDescriptions: Record<
+  "All" | ProjectFilterCategory,
+  string
+> = {
+  All: "A selection of projects showcasing practical applications of machine learning, data analysis, and modern web technologies.",
+  "Data & ML":
+    "Hands-on projects covering data science pipelines, predictive modeling, and interactive dashboards.",
+  "Web Development":
+    "Full-stack web applications and interactive interfaces built with modern frontend systems.",
+};
 
 export const portfolioData: PortfolioData = {
   profile: {
@@ -123,6 +140,7 @@ export const portfolioData: PortfolioData = {
       title: "Fate Series Information Website",
       subtitle: "Informational website about the Fate series",
       category: "Static Website",
+      filterCategories: ["Web Development"],
       tagLabel: "Personal Project",
       image: "/images/fate-series.png",
       images: ["/images/fate-series.png"],
@@ -141,6 +159,7 @@ export const portfolioData: PortfolioData = {
       title: "HoYoverse Games Website",
       subtitle: "An informational website about HoYoverse games",
       category: "Static Website",
+      filterCategories: ["Web Development"],
       tagLabel: "Application Project",
       image: "/images/hoyoverse.png",
       images: ["/images/hoyoverse.png"],
@@ -157,10 +176,30 @@ export const portfolioData: PortfolioData = {
         "https://github.com/SalmanFrs/WEB_10122145_SalmanFaris_PABCL2024",
     },
     {
+      id: "australia-bushfire-monitor",
+      title: "Australia Bushfire Monitor (2023)",
+      subtitle: "Spatio-temporal hotspot & radiative power analytics",
+      category: "Tableau Dashboard",
+      tagLabel: "Data Analysis",
+      filterCategories: ["Data & ML"],
+      image: "/images/australia-bushfire-dashboard.png",
+      description:
+        "Interactive spatio-temporal intelligence dashboard analyzing 394,180 NASA FIRMS MODIS satellite hotspot records across Australia in 2023 (74.73 MW average Fire Radiative Power). Features spatial grid-binning for high-density map rendering, dynamic peak callout detection (October peak: 126,259 hotspots), interactive cross-filtering across monthly trend, provincial rankings, and spatial map views, plus confidence tier and time-of-day controls.",
+      techStack: [
+        { name: "Tableau", colorVariant: "primary" },
+        { name: "Spatial Grid-Binning", colorVariant: "secondary" },
+        { name: "Dashboard Actions", colorVariant: "neutral" },
+        { name: "Calculated Fields", colorVariant: "neutral" },
+      ],
+      liveDemoUrl:
+        "https://public.tableau.com/views/Australia_Bushfire_Monitor_2023/Dashboard1",
+    },
+    {
       id: "brin-signal-dashboard",
       title: "BRIN Signal Analysis Dashboard",
       subtitle: "Signal processing & anomaly detection pipeline",
       category: "Streamlit App",
+      filterCategories: ["Data & ML"],
       tagLabel: "Private Project",
       isPrivate: true,
       images: ["/images/brin-dashboard.png", "/images/brin-anomaly.png"],
@@ -180,6 +219,7 @@ export const portfolioData: PortfolioData = {
       title: "Mini Blog IBM",
       subtitle: "Automated blog generator with IBM Granite LLM",
       category: "LLM Web Application",
+      filterCategories: ["Web Development"],
       tagLabel: "Capstone Project",
       image: "/images/mini-blog-ibm.png",
       description:
@@ -200,6 +240,7 @@ export const portfolioData: PortfolioData = {
       title: "Pothole Severity Classification",
       subtitle: "YOLOv11-based road damage detection & classification",
       category: "Computer Vision",
+      filterCategories: ["Data & ML"],
       tagLabel: "Thesis Project",
       isPrivate: true,
       images: [
@@ -222,6 +263,7 @@ export const portfolioData: PortfolioData = {
       subtitle:
         "A responsive portfolio for showcasing technical projects and experience",
       category: "Web Application",
+      filterCategories: ["Web Development"],
       tagLabel: "Personal Project",
       images: ["/images/my-portfolio-web.png"],
       description:
@@ -241,6 +283,7 @@ export const portfolioData: PortfolioData = {
       title: "KarierTrack",
       subtitle: "A full-stack career pipeline & resume A/B testing platform",
       category: "Web Application",
+      filterCategories: ["Web Development"],
       tagLabel: "Personal Project",
       images: ["/images/kariertrack-dashboard.png"],
       description:
@@ -262,6 +305,7 @@ export const portfolioData: PortfolioData = {
       subtitle:
         "A privacy-first, zero-backend AI image editing & optimization suite",
       category: "Web Application",
+      filterCategories: ["Data & ML", "Web Development"],
       tagLabel: "Personal Project",
       images: ["/images/image-toolkit.png"],
       description:

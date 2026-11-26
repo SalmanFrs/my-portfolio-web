@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { portfolioData } from '../data/portfolioData';
-import type { ProjectItem } from '../types/portfolio';
+import { portfolioData, projectFilterCategories, projectFilterDescriptions } from '../data/portfolioData';
+import type { ProjectFilterCategory, ProjectItem } from '../types/portfolio';
 import { ImageModal } from './ImageModal';
 
 interface ProjectImageCarouselProps {
@@ -226,6 +226,11 @@ const ProjectImageCarousel: React.FC<ProjectImageCarouselProps> = ({ project, im
 
 export const Projects: React.FC = () => {
   const { projects } = portfolioData;
+  const [activeFilter, setActiveFilter] = useState<'All' | ProjectFilterCategory>('All');
+
+  const filteredProjects = projects.filter(
+    (project) => activeFilter === 'All' || project.filterCategories.includes(activeFilter)
+  );
 
   const renderVisualPreview = (project: ProjectItem) => {
     switch (project.visualType ?? 'terminal') {
@@ -278,24 +283,64 @@ export const Projects: React.FC = () => {
   return (
     <section className="py-20 scroll-mt-20" id="projects">
       {/* Header */}
-      <div className="flex flex-col space-y-2 mb-12">
-        <div className="space-y-2">
-          <div className="inline-flex items-center gap-2 font-label-sm text-label-sm text-primary uppercase tracking-widest">
-            <span className="material-symbols-outlined text-sm">terminal</span>
-            <span>Featured Engineering Work</span>
+      <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 lg:gap-6 mb-8">
+        <div className="flex flex-col space-y-2">
+          <div className="space-y-2">
+            <div className="inline-flex items-center gap-2 font-label-sm text-label-sm text-primary uppercase tracking-widest">
+              <span className="material-symbols-outlined text-sm">terminal</span>
+              <span>Featured Engineering Work</span>
+            </div>
+            <h2 className="font-headline-lg text-headline-lg tracking-tight text-on-surface">
+              Selected Projects &amp; Applications
+            </h2>
           </div>
-          <h2 className="font-headline-lg text-headline-lg tracking-tight text-on-surface">
-            Selected Projects &amp; Applications
-          </h2>
+          <p
+            key={activeFilter}
+            className="font-body-md text-body-md text-on-surface-variant max-w-xl transition-opacity duration-200"
+          >
+            {projectFilterDescriptions[activeFilter]}
+          </p>
         </div>
-        <p className="font-body-md text-body-md text-on-surface-variant max-w-xl">
-          A selection of projects showcasing practical applications of machine learning, data analysis, and modern web technologies.
-        </p>
+
+        {/* Category Filter Pill Container */}
+        <div
+          className="inline-flex flex-wrap items-center rounded-full bg-surface-container border border-outline-variant/20 p-1 gap-0.5 max-w-full self-start lg:self-auto"
+          role="group"
+          aria-label="Filter projects by category"
+        >
+          {projectFilterCategories.map((category, idx) => {
+            const isActive = activeFilter === category;
+            return (
+              <React.Fragment key={category}>
+                {idx > 0 && (
+                  <span
+                    aria-hidden="true"
+                    className="text-outline/40 px-1 select-none text-xs"
+                  >
+                    /
+                  </span>
+                )}
+                <button
+                  type="button"
+                  aria-pressed={isActive}
+                  onClick={() => setActiveFilter(category)}
+                  className={`px-3 py-1.5 rounded-full font-label-sm text-label-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/80 ${
+                    isActive
+                      ? 'bg-primary/15 text-primary shadow-sm'
+                      : 'text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/50'
+                  }`}
+                >
+                  {category}
+                </button>
+              </React.Fragment>
+            );
+          })}
+        </div>
       </div>
 
       {/* Project Cards Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects.map((project) => {
+        {filteredProjects.map((project) => {
           // Normalize images: supports both images array and legacy image string
           const projectImages: string[] =
             project.images && project.images.length > 0
