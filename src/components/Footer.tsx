@@ -3,6 +3,8 @@ import { portfolioData } from '../data/portfolioData';
 import { SiGithub } from 'react-icons/si';
 import { FaLinkedin } from 'react-icons/fa6';
 
+const CURRENT_YEAR = new Date().getFullYear();
+
 export const Footer: React.FC = () => {
   const { profile } = portfolioData;
 
@@ -57,7 +59,7 @@ export const Footer: React.FC = () => {
 
         {/* Copyright */}
         <div className="font-label-sm text-label-sm text-outline">
-          © {new Date().getFullYear()} {profile.fullName}. All rights reserved.
+          © {CURRENT_YEAR} {profile.fullName}. All rights reserved.
         </div>
       </div>
     </footer>

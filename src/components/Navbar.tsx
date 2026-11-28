@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { portfolioData } from '../data/portfolioData';
 
+const navLinks = [
+  { label: 'Home', href: '#home', id: 'home' },
+  { label: 'Skills', href: '#skills', id: 'skills' },
+  { label: 'Projects', href: '#projects', id: 'projects' },
+  { label: 'Experience', href: '#experience', id: 'experience' },
+  { label: 'Certificates', href: '#certificates', id: 'certificates' },
+  { label: 'About', href: '#about', id: 'about' },
+];
+
 export const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const { profile } = portfolioData;
-
-  const navLinks = [
-    { label: 'Home', href: '#home', id: 'home' },
-    { label: 'Skills', href: '#skills', id: 'skills' },
-    { label: 'Projects', href: '#projects', id: 'projects' },
-    { label: 'Experience', href: '#experience', id: 'experience' },
-    { label: 'Certificates', href: '#certificates', id: 'certificates' },
-    { label: 'About', href: '#about', id: 'about' },
-  ];
 
   useEffect(() => {
     const handleScroll = () => {

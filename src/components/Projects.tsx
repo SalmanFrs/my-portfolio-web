@@ -13,12 +13,13 @@ const ProjectImageCarousel: React.FC<ProjectImageCarouselProps> = ({ project, im
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(
+    () => typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  );
 
-  // Check user prefers-reduced-motion
+  // Listen for prefers-reduced-motion changes
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    setPrefersReducedMotion(mediaQuery.matches);
 
     const listener = (event: MediaQueryListEvent) => {
       setPrefersReducedMotion(event.matches);

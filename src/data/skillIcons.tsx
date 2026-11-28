@@ -28,6 +28,7 @@ import {
   SiPostgresql,
   SiVercel,
   SiW3Schools,
+  SiLaravel,
 } from "react-icons/si";
 import { FaJava } from "react-icons/fa6";
 import {
@@ -42,6 +43,7 @@ import {
   TbWaveSine,
   TbGridDots,
   TbReplace,
+  TbApi,
 } from "react-icons/tb";
 import { DiVisualstudio } from "react-icons/di";
 import { IoLogoTableau } from "react-icons/io5";
@@ -81,6 +83,8 @@ export const skillIconMap: Record<string, React.ReactElement> = {
   Vite: <SiVite />,
   "Next.js": <SiNextdotjs />,
   "Tailwind CSS": <SiTailwindcss />,
+  Laravel: <SiLaravel />,
+  "REST API": <TbApi />,
 
   // Machine Learning & Computer Vision
   PyTorch: <SiPytorch />,

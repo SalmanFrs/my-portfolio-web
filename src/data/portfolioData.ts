@@ -90,6 +90,8 @@ export const portfolioData: PortfolioData = {
         { name: "Vite", colorVariant: "neutral" },
         { name: "Next.js", highlight: true, colorVariant: "secondary" },
         { name: "Tailwind CSS", colorVariant: "neutral" },
+        { name: "Laravel", highlight: true, colorVariant: "secondary" },
+        { name: "REST API", colorVariant: "neutral" },
       ],
     },
     {
@@ -320,6 +322,28 @@ export const portfolioData: PortfolioData = {
       ],
       liveDemoUrl: "https://image-toolkit-studio.vercel.app/",
       githubUrl: "https://github.com/SalmanFrs/image-toolkit",
+    },
+    {
+      id: "invtrack",
+      title: "InvTrack",
+      subtitle:
+        "A full-stack multi-warehouse inventory & transfer management system",
+      category: "Web Application",
+      filterCategories: ["Web Development"],
+      tagLabel: "Personal Project",
+      images: ["/images/invtrack-dashboard.png"],
+      description:
+        "Developed and deployed a decoupled full-stack inventory management system on Vercel using a Laravel 13 REST API, PostgreSQL (Neon), and a React 19 + TypeScript + Vite SPA. Features branch-scoped RBAC via Laravel Sanctum and Spatie Permission (Super Admin, Warehouse Lead, Staff), concurrency-safe stock mutations with row-level locking, an immutable audit trail, an approval-driven inter-branch transfer workflow, and interactive OpenAPI documentation via Dedoc Scramble.",
+      techStack: [
+        { name: "Laravel", colorVariant: "primary" },
+        { name: "React", colorVariant: "secondary" },
+        { name: "TypeScript", colorVariant: "primary" },
+        { name: "Tailwind CSS", colorVariant: "secondary" },
+        { name: "PostgreSQL", colorVariant: "neutral" },
+        { name: "Vercel", colorVariant: "neutral" },
+      ],
+      liveDemoUrl: "https://invtrack-web.vercel.app",
+      githubUrl: "https://github.com/SalmanFrs/invtrack-web",
     },
   ],
 
